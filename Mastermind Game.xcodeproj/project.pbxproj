@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83B9A28F27672DA8009D54DC /* MastermindLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B9A28E27672DA8009D54DC /* MastermindLogic.swift */; };
 		83DB77A1273918870043B1EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB77A0273918870043B1EB /* AppDelegate.swift */; };
 		83DB77A3273918870043B1EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB77A2273918870043B1EB /* SceneDelegate.swift */; };
 		83DB77A5273918870043B1EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB77A4273918870043B1EB /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83B9A28E27672DA8009D54DC /* MastermindLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MastermindLogic.swift; sourceTree = "<group>"; };
 		83DB779D273918870043B1EB /* Mastermind Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mastermind Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DB77A0273918870043B1EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83DB77A2273918870043B1EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				83DB77B12739188F0043B1EB /* Info.plist */,
 				83DB77A9273918880043B1EB /* Mastermind_Game.xcdatamodeld */,
 				83FD9D4F274B783B000DA0B6 /* FiPageViewController.swift */,
+				83B9A28E27672DA8009D54DC /* MastermindLogic.swift */,
 			);
 			path = "Mastermind Game";
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B9A28F27672DA8009D54DC /* MastermindLogic.swift in Sources */,
 				83DB77A5273918870043B1EB /* ViewController.swift in Sources */,
 				83DB77AB273918880043B1EB /* Mastermind_Game.xcdatamodeld in Sources */,
 				83FD9D50274B783B000DA0B6 /* FiPageViewController.swift in Sources */,
