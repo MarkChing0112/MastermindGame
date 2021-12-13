@@ -79,19 +79,6 @@ class MastermindLogic {
                 checked[i] = 1
             }
         }
-        //check color only
-        for i in 0..<4 {
-            for j in 0..<4 {
-                if i != j {
-                    if answerPegs[i] == pegsByRow[j] {
-                        if checked[i] == 0 {
-                            pinsByRow.append(0)
-                            checked[i] = 1
-                        }
-                    }
-                }
-            }
-        }
         if (checked == [1,1,1,1]){
             return true;
         }

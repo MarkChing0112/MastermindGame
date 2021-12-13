@@ -69,11 +69,22 @@ class ViewController: UIViewController {
                     answerPeg.backgroundColor = getColor(code: code)
                     answerPeg.layer.cornerRadius = 20
                 }
-            }else{
+            }else if(logic.turn < 10){
                     logic.nextTurn()
                     self.Turn.text = "Turn: \(logic.turn + 1)"
                     self.messageLabel.text = ""
-                }
+            }else if(logic.turn == 10){
+                if(logic.checkWin() == true){
+                    self.messageLabel.text = "WiN!!!!!!!!!!!!!"
+                    for answerPeg in answerPegs {
+                        let index = answerPeg.tag
+                        let code = logic.answerPegs[index]
+                        answerPeg.backgroundColor = getColor(code: code)
+                        answerPeg.layer.cornerRadius = 20
+                    }}else{
+                        self.messageLabel.text = "YouLose!!!!!"}
+            }
+            
         } else {
             self.messageLabel.text = "Didn't fill in all the pegs"
         }
@@ -104,6 +115,7 @@ class ViewController: UIViewController {
     
     func resetGame(){
         self.logic = MastermindLogic()
+        self.messageLabel.text = ""
         for answerPeg in answerPegs {
             answerPeg.backgroundColor = .clear
             answerPeg.layer.cornerRadius = 20
