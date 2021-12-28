@@ -62,7 +62,7 @@ class ViewController: UIViewController {
                 }
             }
             if(logic.checkWin() == true){
-                self.messageLabel.text = "WiN!!!!!!!!!!!!!"
+                self.messageLabel.text = "You WiN!!!!!!!!!!!!!"
                 for answerPeg in answerPegs {
                     let index = answerPeg.tag
                     let code = logic.answerPegs[index]
@@ -70,21 +70,22 @@ class ViewController: UIViewController {
                     answerPeg.layer.cornerRadius = 20
                 }
             }else if(logic.turn < 10){
+                if(logic.turn+1 < 10){
                     logic.nextTurn()
                     self.Turn.text = "Turn: \(logic.turn + 1)"
-                    self.messageLabel.text = ""
-            }else if(logic.turn == 10){
-                if(logic.checkWin() == true){
-                    self.messageLabel.text = "WiN!!!!!!!!!!!!!"
-                    for answerPeg in answerPegs {
-                        let index = answerPeg.tag
-                        let code = logic.answerPegs[index]
-                        answerPeg.backgroundColor = getColor(code: code)
-                        answerPeg.layer.cornerRadius = 20
-                    }}else{
-                        self.messageLabel.text = "YouLose!!!!!"}
+                    self.messageLabel.text = "Try again"
+                }else{
+                    if(logic.checkWin() == false){
+                            self.messageLabel.text = "YouLose!!Please reset the game"
+                            for answerPeg in answerPegs {
+                                let index = answerPeg.tag
+                                let code = logic.answerPegs[index]
+                                answerPeg.backgroundColor = getColor(code: code)
+                                answerPeg.layer.cornerRadius = 20
+                        }
+                    }
+                }
             }
-            
         } else {
             self.messageLabel.text = "Didn't fill in all the pegs"
         }

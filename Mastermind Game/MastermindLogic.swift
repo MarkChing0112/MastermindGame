@@ -28,12 +28,14 @@ class MastermindLogic {
     
     func canNextTurn() -> Bool {
         let pegsByRow = inputPegs[turn]
+
         for peg in pegsByRow {
             if peg == -1 {
                 return false
             }
         }
-        return true
+            return true
+        
     }
     
     func nextTurn(){
@@ -42,13 +44,15 @@ class MastermindLogic {
     
     func check() -> [Int] {
         let pegsByRow = inputPegs[turn]
-        var checked = [0, 0, 0, 0]
+        var checkedAns = [0, 0, 0, 0]
+        var checkedPeg = [0, 0, 0, 0]
         var pinsByRow = [Int]()
         //check color and pos
         for i in 0..<4 {
-            if answerPegs[i] == pegsByRow[i] {
+            if answerPegs[i] == pegsByRow[i] && checkedAns[i] == 0 && checkedPeg[i] == 0  {
                 pinsByRow.append(1)
-                checked[i] = 1
+                checkedAns[i] = 1
+                checkedPeg[i] = 1
             }
         }
         //check color only
@@ -56,9 +60,11 @@ class MastermindLogic {
             for j in 0..<4 {
                 if i != j {
                     if answerPegs[i] == pegsByRow[j] {
-                        if checked[i] == 0 {
+                        if checkedAns[i] == 0 && checkedPeg[j] == 0 {
                             pinsByRow.append(0)
-                            checked[i] = 1
+                            checkedAns[i] = 1
+                            checkedPeg[j] = 1
+                            print("ok")
                         }
                     }
                 }
@@ -70,16 +76,18 @@ class MastermindLogic {
     
     func checkWin() -> Bool{
         let pegsByRow = inputPegs[turn]
-        var checked = [0, 0, 0, 0]
+        var checkedAns = [0, 0, 0, 0]
+        var checkedPeg = [0, 0, 0, 0]
         var pinsByRow = [Int]()
         //check color and pos
         for i in 0..<4 {
-            if answerPegs[i] == pegsByRow[i] {
+            if answerPegs[i] == pegsByRow[i] && checkedAns[i] == 0 && checkedPeg[i] == 0  {
                 pinsByRow.append(1)
-                checked[i] = 1
+                checkedAns[i] = 1
+                checkedPeg[i] = 1
             }
         }
-        if (checked == [1,1,1,1]){
+        if (checkedAns == [1,1,1,1]){
             return true;
         }
         return false
